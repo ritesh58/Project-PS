@@ -7,7 +7,7 @@
     object_id: 8efdeca6-5815-4388-bfac-d045fb1eadbc
     vault_name: testkvritesh685
     storage_account_name: clh00063
-    resource_group: RITESH-RG58
+    resource_group: RITESH-SP-RG
 
   tasks:
     - name: create an account

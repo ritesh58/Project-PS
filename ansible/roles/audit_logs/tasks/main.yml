@@ -1,0 +1,14 @@
+- name: Create storage-based diagnostic setting for a virtual network
+  collections:
+    - azure.azcollection
+  azure_rm_monitordiagnosticsetting:
+    name: "{{ diagnostic_setting_name }}"
+    resource:
+      name: "{{ storage_account_name }}/blobServices/default/"
+      type: "Microsoft.Storage/storageAccounts"
+      resource_group: "{{ RG_name }}"
+    log_analytics:
+      name: "{{ log_analytics_name }}"
+      resource_group: "{{ RG_name }}"
+    logs:
+       - category: StorageRead

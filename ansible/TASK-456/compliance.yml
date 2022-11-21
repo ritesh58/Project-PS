@@ -1,0 +1,14 @@
+
+- name: Compliance
+  hosts: localhost
+  vars:
+    RG_name: RITESH-RG58
+    sec_group: secgroup001
+    log_analytics_name: "logsanalusx"
+    storage_account_name: "riteshtest123"
+    diagnostic_setting_name: "setting1"
+  roles:
+     - networksecurity
+     - versioning
+     - create_log_analytics
+     - audit_logs

@@ -1,0 +1,24 @@
+
+- name: Create Security
+  hosts: localhost
+  collections:
+    - azure.azcollection
+  tasks:
+  # - name: Create security group that allows SSH/HTTP/HTTPS
+  #   shell: az storage account blob-service-properties update --resource-group "RITESH-RG58" --account-name "riteshtest123" --enable-versioning true
+    # - name: Create Log Analytics workspace
+    #   azure_rm_loganalyticsworkspace:
+    #     name: "storagews"
+    #     resource_group: "RITESH-RG58"
+    - name: Create storage-based diagnostic setting for a virtual network
+      azure_rm_monitordiagnosticsetting:
+        name: "storagews"
+        resource:
+          name: "riteshtest123/blobServices/default/"
+          type: "Microsoft.Storage/storageAccounts"
+          resource_group: "RITESH-RG58"
+        log_analytics:
+          name: "storagews"
+          resource_group: "RITESH-RG58"
+        logs:
+          - category: StorageRead

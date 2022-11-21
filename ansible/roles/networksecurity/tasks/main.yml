@@ -1,0 +1,12 @@
+- name: Create security group role
+  azure_rm_securitygroup:
+        resource_group: "{{ RG_name }}"
+        name: "{{ sec_group }}"
+        purge_rules: yes
+        rules:
+          - name: HTTPS
+            protocol: Tcp
+            destination_port_range: 443
+            access: allow
+            priority: 103
+            direction: Inbound

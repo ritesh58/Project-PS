@@ -1,0 +1,4 @@
+- name: Create Log Analytics workspace
+  azure_rm_loganalyticsworkspace:
+    name: "{{ log_analytics_name }}"
+    resource_group: "{{ RG_name }}"

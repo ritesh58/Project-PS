@@ -1,0 +1,16 @@
+- name: Install NGINX
+  hosts: nginx
+  gather_facts: false
+  become: true
+  tasks:
+  - name: Make sure nginx is installed
+    apt: name=nginx update_cache=yes state=latest
+
+  - name: Make sure nginx is started
+    service:
+      name: nginx
+      state: started
+      
+  - name: Wait for web to become available
+    wait_for:
+      port: 80

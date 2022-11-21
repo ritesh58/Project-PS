@@ -1,0 +1,20 @@
+node {
+  stage('Init') {
+    checkout scm
+  }
+
+  stage('Setup Compliance on Aure') {
+    withCredentials([azureServicePrincipal(credentialsId: 'b9e954f9-1565-41c8-9daa-c2de4ffe8a7b', 
+                                    subscriptionIdVariable: 'AZURE_SUBSCRIPTION_ID',
+                                    clientIdVariable: 'AZURE_CLIENT_ID',
+                                    clientSecretVariable: 'AZURE_SECRET',
+                                    tenantIdVariable: 'AZURE_TENANT')]) {
+                                    
+        withEnv(['PATH+EXTRA=/usr/local/bin']){                                
+        ansiblePlaybook installation: 'ansible',
+                        playbook: 'ansible/Task-456/compliance.yml'
+        }
+
+    }
+  }
+}

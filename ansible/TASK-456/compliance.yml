@@ -9,7 +9,7 @@
     storage_account_name: "riteshtest123"
     diagnostic_setting_name: "setting1"
   roles:
-     - networksecurity
-     - versioning
-     - create_log_analytics
-     - audit_logs
+    - networksecurity
+    - versioning
+    - create_log_analytics
+    - audit_logs

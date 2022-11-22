@@ -5,8 +5,8 @@
   vars:
     tenant_id: 8f0f669a-21e5-469b-93ea-29e4cd288d97
     object_id: 8efdeca6-5815-4388-bfac-d045fb1eadbc
-    vault_name: testkvritesh686
-    storage_account_name: clh00063
+    vault_name: testkvritesh001
+    storage_account_name: clh00064
     resource_group: RITESH-SP-RG
 
   tasks:

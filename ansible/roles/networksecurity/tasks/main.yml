@@ -7,6 +7,6 @@
           - name: HTTPS
             protocol: Tcp
             destination_port_range: 443
-            access: allow
+            access: Allow
             priority: 103
             direction: Inbound

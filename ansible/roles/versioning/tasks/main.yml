@@ -1,2 +1,10 @@
+
+- name: create an account
+  azure_rm_storageaccount:
+    resource_group: "{{ RG_name }}"
+    name: "{{ storage_account_name }}"
+    type: Standard_RAGRS
+    tags:
+      testing: testing
 - name: Enable Versioning in Storage Account
   shell: az storage account blob-service-properties update --resource-group "{{ RG_name }}" --account-name "{{ storage_account_name }}" --enable-versioning

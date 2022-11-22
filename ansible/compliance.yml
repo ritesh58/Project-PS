@@ -2,7 +2,7 @@
 - name: Compliance
   hosts: localhost
   vars:
-    RG_name: RITESH-RG58
+    RG_name: RITESH-SP-RG
     sec_group: secgroup001
     log_analytics_name: "logsanalusx"
     storage_account_name: "riteshtest123"

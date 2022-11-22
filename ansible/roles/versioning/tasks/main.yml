@@ -1,4 +1,3 @@
-
 - name: create an account
   azure_rm_storageaccount:
     resource_group: "{{ RG_name }}"

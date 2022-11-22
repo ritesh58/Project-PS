@@ -1,8 +1,9 @@
 
 - name: Compliance
+- name: Compliance
   hosts: localhost
   vars:
-    RG_name: RITESH-SP-RG
+    RG_name: RITESH-RG58
     sec_group: secgroup001
     log_analytics_name: "logsanalusx"
     storage_account_name: "riteshtest123"

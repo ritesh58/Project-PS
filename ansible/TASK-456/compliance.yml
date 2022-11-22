@@ -2,11 +2,19 @@
 - name: Compliance
   hosts: localhost
   vars:
-    RG_name: RITESH-RG58
+    RG_name: RITESH-SP-RG
     sec_group: secgroup001
     log_analytics_name: "logsanalusx"
     storage_account_name: "riteshtest123"
     diagnostic_setting_name: "setting1"
+  tasks:
+    - name: create an account
+      azure_rm_storageaccount:
+        resource_group: "{{ RG_name }}"
+        name: "{{ storage_account_name }}"
+        type: Standard_RAGRS
+        tags:
+          testing: testing
   roles:
      - networksecurity
      - versioning
